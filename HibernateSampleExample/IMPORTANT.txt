@@ -1,0 +1,35 @@
+-------------- Hibernate Simple Sample ----------
+
+use janx;
+
+CREATE TABLE USER (
+ USER_ID INT (5) NOT NULL,
+ USERNAME VARCHAR (20) NOT NULL,
+ CREATED_BY VARCHAR (20) NOT NULL,
+ CREATED_DATE DATE NOT NULL,
+ PRIMARY KEY ( USER_ID )
+)
+
+select *
+from janx.user;
+
+------------------- Test Project ---------------
+1- Run the Test class you will see following output in console.
+
+	Hibernate: 
+    insert 
+    into
+        USER
+        (USERNAME, CREATED_BY, CREATED_DATE, USER_ID) 
+    values
+        (?, ?, ?, ?)
+        
+
+2- Check the Table you can see following data in table
+	mysql> select * from user;
+	+---------+----------+------------+--------------+
+	| USER_ID | USERNAME | CREATED_BY | CREATED_DATE |
+	+---------+----------+------------+--------------+
+	|       1 | Mukesh   | Google     | 2014-06-13   |
+	+---------+----------+------------+--------------+
+	1 row in set (0.00 sec)
